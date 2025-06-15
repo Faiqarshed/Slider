@@ -1,0 +1,17 @@
+# Place this in src/main/resources/graphql/schema.graphqls
+scalar ID
+scalar String
+
+type Query {
+    # Query to find shared interests
+    findSharedInterests: [SharedInterest]!
+}
+
+# Represents shared interests between profiles
+type SharedInterest {
+    # The profile ID
+    profileId: ID!
+
+    # List of shared interests
+    sharedInterests: String!
+}
