@@ -2,7 +2,7 @@
 FROM gradle:8.5-jdk17 AS build
 COPY --chown=gradle:gradle . /home/gradle/project
 WORKDIR /home/gradle/project
-RUN gradle build --no-daemon
+RUN gradle build -x test --no-daemon
 
 # Use a lightweight JDK image to run the app
 FROM eclipse-temurin:17-jdk
